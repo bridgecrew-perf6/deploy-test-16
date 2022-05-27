@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<h1>{{title}}</h1>
+<p>Содержимое страницы о сайте
+<form action="" method="post">
+{% csrf_token %}
+    <div class="form-check">
+        <input type="checkbox" value ="mango" id="mango" name = fruits>
+        <label for="mango">MANGO</label>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" value ="apple" id="apple" name = fruits>
+        <label for="apple">APPLE</label>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" value ="watermelon" id="watermelon" name = fruits>
+        <label for="watermelon">WATERMELON</label>
+    </div>
+    <button type="submit">submit</button>
+</form>
+
+<table class="table">
+   {% for item in driverModel_all %}
+   <tr>
+     <td class="table-success">{{ item.id }} </td>
+     <td class="table-success">{{ item.car_num }}</td>
+     <td class="table-success">
+        <div class="form-check">
+            <input type="checkbox" value ="watermelon" id="watermelon" name = fruits>
+        </div>
+
+     </td>
+
+   </tr>
+   {% endfor %}
+</table>
+
+
+
+
+</body>
+</html>
